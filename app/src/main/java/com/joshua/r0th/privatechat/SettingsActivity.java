@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -98,10 +98,10 @@ public class SettingsActivity extends AppCompatActivity
 
     private void InitializeFields()
     {
-        UpdateAccountSettings = (Button) findViewById(R.id.update_settings_button);
-        userName = (EditText) findViewById(R.id.set_user_name);
-        userStatus = (EditText) findViewById(R.id.set_profile_status);
-        userProfileImage = (CircleImageView) findViewById(R.id.set_profile_image);
+        UpdateAccountSettings = findViewById(R.id.update_settings_button);
+        userName =  findViewById(R.id.set_user_name);
+        userStatus =  findViewById(R.id.set_profile_status);
+        userProfileImage = findViewById(R.id.set_profile_image);
         loadingBar = new ProgressDialog(this);
 
         SettingsToolBar = (Toolbar) findViewById(R.id.settings_toolbar);
@@ -153,7 +153,7 @@ public class SettingsActivity extends AppCompatActivity
                         {
                             Toast.makeText(SettingsActivity.this, "Profile Image uploaded Successfully...", Toast.LENGTH_SHORT).show();
 
-                            final String downloaedUrl = task.getResult().getDownloadUrl().toString();
+                            final String downloaedUrl = task.getResult().getMetadata().getReference().getDownloadUrl().toString();
 
                             RootRef.child("Users").child(currentUserID).child("image")
                                     .setValue(downloaedUrl)

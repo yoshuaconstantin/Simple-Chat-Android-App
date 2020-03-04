@@ -10,10 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,7 +40,7 @@ public class LoginActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
@@ -150,12 +152,12 @@ public class LoginActivity extends AppCompatActivity
 
     private void InitializeFields()
     {
-        LoginButton = (Button) findViewById(R.id.login_button);
-        PhoneLoginButton = (Button) findViewById(R.id.phone_login_button);
-        UserEmail = (EditText) findViewById(R.id.login_email);
-        UserPassword = (EditText) findViewById(R.id.login_password);
-        NeedNewAccountLink = (TextView) findViewById(R.id.need_new_account_link);
-        ForgetPasswordLink = (TextView) findViewById(R.id.forget_password_link);
+        LoginButton =  findViewById(R.id.login_button);
+        PhoneLoginButton =  findViewById(R.id.phone_login_button);
+        UserEmail =  findViewById(R.id.login_email);
+        UserPassword =  findViewById(R.id.login_password);
+        NeedNewAccountLink =  findViewById(R.id.need_new_account_link);
+        ForgetPasswordLink =  findViewById(R.id.forget_password_link);
         loadingBar = new ProgressDialog(this);
     }
 

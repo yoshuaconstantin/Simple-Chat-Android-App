@@ -4,11 +4,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -56,17 +58,17 @@ public class MainActivity extends AppCompatActivity
         RootRef = FirebaseDatabase.getInstance().getReference();
 
 
-        mToolbar = (Toolbar) findViewById(R.id.main_page_toolbar);
+        mToolbar =  findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("WhatsApp");
+        getSupportActionBar().setTitle("APLIKASI ANAK ANJING");
 
 
-        myViewPager = (ViewPager) findViewById(R.id.main_tabs_pager);
+        myViewPager =  findViewById(R.id.main_tabs_pager);
         myTabsAccessorAdapter = new TabsAccessorAdapter(getSupportFragmentManager());
         myViewPager.setAdapter(myTabsAccessorAdapter);
 
 
-        myTabLayout = (TabLayout) findViewById(R.id.main_tabs);
+        myTabLayout = findViewById(R.id.main_tabs);
         myTabLayout.setupWithViewPager(myViewPager);
     }
 
@@ -125,7 +127,7 @@ public class MainActivity extends AppCompatActivity
             {
                 if ((dataSnapshot.child("name").exists()))
                 {
-                    Toast.makeText(MainActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
+
                 }
                 else
                 {
@@ -141,17 +143,12 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        super.onCreateOptionsMenu(menu);
-
-        getMenuInflater().inflate(R.menu.options_menu, menu);
-
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
