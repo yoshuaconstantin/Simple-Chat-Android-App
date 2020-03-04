@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "845831765961",
+    "firebase_url": "https://privatechat-85d34.firebaseio.com",
+    "project_id": "privatechat-85d34",
+    "storage_bucket": "privatechat-85d34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845831765961:android:cc27bc6a81956af248f218",
+        "android_client_info": {
+          "package_name": "com.joshua.r0th.privatechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845831765961-1j1q1vjd1aj8tij4estfl59hdmbv10a0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.joshua.r0th.privatechat",
+            "certificate_hash": "7aa55ee8e0767cba0c35b4073602c2b0864945d9"
+          }
+        },
+        {
+          "client_id": "845831765961-9kr2prqkqm7jhgs8rlplqqi5obsjlq63.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqdy92OmY6Un3TOjDwBf-pal-qK8HsuoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845831765961-9kr2prqkqm7jhgs8rlplqqi5obsjlq63.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
