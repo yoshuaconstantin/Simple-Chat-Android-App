@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PhoneLoginActivity">
+    tools:context=".PhoneLoginActivity"
+    android:background="@color/MainDark">
 
     <EditText
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:id="@+id/phone_nnumber_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +19,7 @@
         android:layout_marginTop="180dp"
         android:background="@drawable/inputs"
         android:padding="8dp"
-        android:hint="Write phone number here..."
+        android:hint="Ketik Nomor Anda Di Sini..."
         android:textAllCaps="false"
         android:textSize="15sp"
         android:drawableStart="@drawable/phone"
@@ -49,7 +52,7 @@
         android:id="@+id/send_ver_code_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Verification Code"
+        android:text="Kirim Nomor Verifikasi"
         android:layout_below="@+id/verification_code_input"
         android:textAllCaps="false"
         android:layout_marginStart="17dp"

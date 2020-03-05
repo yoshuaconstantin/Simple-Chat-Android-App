@@ -91,17 +91,6 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    @Override
-    protected void onStop()
-    {
-        super.onStop();
-
-        if (currentUser != null)
-        {
-            updateUserStatus("offline");
-        }
-    }
-
 
 
     @Override

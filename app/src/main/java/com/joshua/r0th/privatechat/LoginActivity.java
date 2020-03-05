@@ -99,16 +99,16 @@ public class LoginActivity extends AppCompatActivity
 
         if (TextUtils.isEmpty(email))
         {
-            Toast.makeText(this, "Please enter email...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Tolong Masukan Email...", Toast.LENGTH_SHORT).show();
         }
         if (TextUtils.isEmpty(password))
         {
-            Toast.makeText(this, "Please enter password...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Tolong Masukan Password...", Toast.LENGTH_SHORT).show();
         }
         else
         {
-            loadingBar.setTitle("Sign In");
-            loadingBar.setMessage("Please wait....");
+            loadingBar.setTitle("Mencoba Masuk");
+            loadingBar.setMessage("Mohon Tunggu...");
             loadingBar.setCanceledOnTouchOutside(true);
             loadingBar.show();
 
@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity
                                                 if (task.isSuccessful())
                                                 {
                                                     SendUserToMainActivity();
-                                                    Toast.makeText(LoginActivity.this, "Logged in Successful...", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(LoginActivity.this, "Berhasil Login...", Toast.LENGTH_SHORT).show();
                                                     loadingBar.dismiss();
                                                 }
                                             }

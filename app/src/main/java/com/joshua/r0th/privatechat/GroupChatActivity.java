@@ -130,7 +130,13 @@ public class GroupChatActivity extends AppCompatActivity
         SendMessageButton =  findViewById(R.id.send_message_button);
         userMessageInput =  findViewById(R.id.input_group_message);
         displayTextMessages =  findViewById(R.id.group_chat_text_display);
-        mScrollView = (ScrollView) findViewById(R.id.my_scroll_view);
+        mScrollView =  findViewById(R.id.my_scroll_view);
+        mScrollView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        },50);
     }
 
 

@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -48,10 +49,10 @@ public class ChatActivity extends AppCompatActivity
     private Toolbar ChatToolBar;
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
-
+    private String currentUserID;
     private ImageButton SendMessageButton, SendFilesButton;
     private EditText MessageInputText;
-
+    FirebaseUser currentUser;
     private final List<Messages> messagesList = new ArrayList<>();
     private LinearLayoutManager linearLayoutManager;
     private MessageAdapter messageAdapter;
@@ -72,8 +73,8 @@ public class ChatActivity extends AppCompatActivity
         mAuth = FirebaseAuth.getInstance();
         messageSenderID = mAuth.getCurrentUser().getUid();
         RootRef = FirebaseDatabase.getInstance().getReference();
-
-
+        currentUserID = mAuth.getCurrentUser().getUid();
+        currentUser = mAuth.getCurrentUser();
         messageReceiverID = getIntent().getExtras().get("visit_user_id").toString();
         messageReceiverName = getIntent().getExtras().get("visit_user_name").toString();
         messageReceiverImage = getIntent().getExtras().get("visit_image").toString();
@@ -83,7 +84,7 @@ public class ChatActivity extends AppCompatActivity
 
 
         userName.setText(messageReceiverName);
-        Picasso.get().load(messageReceiverImage).placeholder(R.drawable.profile_image).into(userImage);
+
 
 
         SendMessageButton.setOnClickListener(new View.OnClickListener() {
@@ -136,12 +137,14 @@ public class ChatActivity extends AppCompatActivity
 
         SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
         saveCurrentTime = currentTime.format(calendar.getTime());
+
     }
 
 
 
     private void DisplayLastSeen()
     {
+
         RootRef.child("Users").child(messageReceiverID)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
@@ -215,6 +218,7 @@ public class ChatActivity extends AppCompatActivity
 
                     }
                 });
+
     }
 
 
@@ -225,7 +229,7 @@ public class ChatActivity extends AppCompatActivity
 
         if (TextUtils.isEmpty(messageText))
         {
-            Toast.makeText(this, "first write your message...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Tulisa lah Pesan nya apa -_-...", Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -267,4 +271,6 @@ public class ChatActivity extends AppCompatActivity
             });
         }
     }
+
+
 }
