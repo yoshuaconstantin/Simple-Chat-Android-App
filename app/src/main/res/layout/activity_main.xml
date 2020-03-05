@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/MainDark"
     tools:context=".MainActivity">
 
 
@@ -21,6 +21,7 @@
         </include>
 
         <com.google.android.material.tabs.TabLayout
+            android:background="@color/HeaderDark"
             android:id="@+id/main_tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -3,4 +3,9 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="ChatDark">#074540</color>
+    <color name="SenderDark">#202E37</color>
+    <color name="HeaderDark">#232D36</color>
+    <color name="MainDark">#101D25</color>
+    <color name="white">#FFFFFF</color>
 </resources>

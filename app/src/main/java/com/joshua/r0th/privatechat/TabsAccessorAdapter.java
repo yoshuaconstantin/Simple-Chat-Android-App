@@ -55,16 +55,16 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter
         switch (position)
         {
             case 0:
-                return "Chats";
+                return "Chat";
 
             case 1:
-                return "Groups";
+                return "Grup";
 
             case 2:
-                return "Contacts";
+                return "Kontak";
 
             case 3:
-                return "Requests";
+                return "Permintaan";
 
             default:
                 return null;
