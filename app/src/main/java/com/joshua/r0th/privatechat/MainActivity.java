@@ -3,6 +3,7 @@ package com.joshua.r0th.privatechat;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 
 import android.view.Menu;
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity
     private DatabaseReference RootRef;
     private String currentUserID;
 
-
+    Handler handler;
+    Runnable r;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -70,6 +72,16 @@ public class MainActivity extends AppCompatActivity
 
         myTabLayout = findViewById(R.id.main_tabs);
         myTabLayout.setupWithViewPager(myViewPager);
+        handler = new Handler();
+        r = new Runnable() {
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                updateUserStatus("offline");
+            }
+        };
+        startHandler();
     }
 
 
@@ -89,6 +101,7 @@ public class MainActivity extends AppCompatActivity
             VerifyUserExistance();
         }
     }
+
 
 
 
@@ -266,5 +279,9 @@ public class MainActivity extends AppCompatActivity
         RootRef.child("Users").child(currentUserID).child("userState")
                 .updateChildren(onlineStateMap);
 
+    }
+
+    public void startHandler() {
+        handler.postDelayed(r, 1*60*1000); //for 1 minutes
     }
 }
